@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -9,15 +9,15 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         elevation: 0.0,
         actions: const [
-          Icon(Icons.add_box, color: Colors.black),
+          Icon(Icons.add_box_outlined, color: Colors.black),
           SizedBox(
             width: 20,
           ),
-          Icon(Icons.favorite, color: Colors.black),
+          Icon(Icons.favorite_border_outlined, color: Colors.black),
           SizedBox(
             width: 25,
           ),
-          Icon(Icons.send, color: Colors.black),
+          Icon(Icons.send_outlined, color: Colors.black),
           SizedBox(
             width: 20,
           )
@@ -32,16 +32,17 @@ class HomeScreen extends StatelessWidget {
       body: Column(
         children: [
           Container(
+            color: Colors.white,
             width: double.infinity,
             height: 100,
             child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: 15,
                 itemBuilder: (context, index) => Container(
-                      margin: EdgeInsets.all(10.0),
+                      margin: const EdgeInsets.all(10.0),
                       width: 80,
                       height: 80,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         // boxShadow: [
                         //   BoxShadow(
                         //       color: Colors.black26,
@@ -50,8 +51,8 @@ class HomeScreen extends StatelessWidget {
                         // ],
                         shape: BoxShape.circle,
                       ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                      child: const Padding(
+                        padding: EdgeInsets.all(8.0),
                         child: CircleAvatar(
                           backgroundColor: Colors.white,
                           child: ClipOval(
@@ -66,23 +67,56 @@ class HomeScreen extends StatelessWidget {
                     )),
           ),
           Container(
-              height: 200,
+              color: Colors.white,
+              height: 560,
               width: double.infinity,
-              child: ListTile(
-                leading: Container(
-                  margin: EdgeInsets.all(10),
-                  width: 60,
-                  height: 60,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
+              child: Column(
+                children: [
+                  ListTile(
+                    trailing: IconButton(
+                        onPressed: () {},
+                        icon: Icon(
+                          Icons.more_vert,
+                          color: Colors.black,
+                        )),
+                    leading: const CircleAvatar(
+                      child: ClipOval(
+                          child: Image(
+                        fit: BoxFit.cover,
+                        height: 60,
+                        width: 60,
+                        image: NetworkImage(
+                            "https://avatars.githubusercontent.com/u/71889823?v=4"),
+                      )),
+                    ),
+                    title: Text("krvlimrc"),
+                    subtitle: Text("Natural History Museum - London"),
                   ),
-                  child: CircleAvatar(
-                    child: ClipOval(child: Image(
-                      fit: BoxFit.cover,
-                      height:60 ,width: 60,image: NetworkImage("https://avatars.githubusercontent.com/u/71889823?v=4"),)),
+                  Container(
+                    margin: EdgeInsets.all(10.0),
+                    width: double.infinity,
+                    height: 400.0,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(25.0),
+                        image: DecorationImage(
+                          image: AssetImage("assets/images/bg.jpg"),
+                        )),
+                    child: Row(children: [
+                      Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 340, left: 5),
+                            child: Icon(
+                              Icons.favorite_border_outlined,
+                              color: Colors.black,
+                            ),
+                          )
+                        ],
+                      )
+                    ]),
                   ),
-                ),
-              ))
+                ],
+              )),
         ],
       ),
     );
