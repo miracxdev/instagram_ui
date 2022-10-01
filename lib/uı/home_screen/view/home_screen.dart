@@ -43,12 +43,6 @@ class HomeScreen extends StatelessWidget {
                       width: 80,
                       height: 80,
                       decoration: const BoxDecoration(
-                        // boxShadow: [
-                        //   BoxShadow(
-                        //       color: Colors.black26,
-                        //       offset: Offset(0, 2),
-                        //       blurRadius: 6)
-                        // ],
                         shape: BoxShape.circle,
                       ),
                       child: const Padding(
@@ -91,29 +85,6 @@ class HomeScreen extends StatelessWidget {
                     ),
                     title: Text("krvlimrc"),
                     subtitle: Text("Natural History Museum - London"),
-                  ),
-                  Container(
-                    margin: EdgeInsets.all(10.0),
-                    width: double.infinity,
-                    height: 400.0,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(25.0),
-                        image: DecorationImage(
-                          image: AssetImage("assets/images/bg.jpg"),
-                        )),
-                    child: Row(children: [
-                      Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(top: 340, left: 5),
-                            child: Icon(
-                              Icons.favorite_border_outlined,
-                              color: Colors.black,
-                            ),
-                          )
-                        ],
-                      )
-                    ]),
                   ),
                 ],
               )),
